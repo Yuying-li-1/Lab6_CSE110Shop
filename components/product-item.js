@@ -3,7 +3,7 @@
 class ProductItem extends HTMLElement {
   // TODO
   constructor() {
-    //super();
+    super();
     var shadow = this.attachShadow({mode: 'open'});
     shadow.innerHTML = `
       <li class="product">
@@ -149,6 +149,7 @@ class ProductItem extends HTMLElement {
     set add(newAdd){
       this.setAttribute('add', newAdd);
     }
+
 
 }
 
