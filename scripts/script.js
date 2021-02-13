@@ -5,7 +5,7 @@ window.addEventListener('DOMContentLoaded', () => {
   function checkStorage() {
     return JSON.stringify(localStorage) == "{}" ? false : true;
   };
-
+  console.log("into checkStorage");
   if(! checkStorage()){
     fetch(`https://fakestoreapi.com/products`)
       .then(res => res.json())
@@ -17,6 +17,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
       } );
   }
+  console.log("line20");
   console.log(localStorage.length);
 
   var list = [];
