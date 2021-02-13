@@ -5,23 +5,48 @@ window.addEventListener('DOMContentLoaded', () => {
   function checkStorage() {
     return JSON.stringify(localStorage) == "{}" ? false : true;
   };
-  console.log("into checkStorage");
   if(! checkStorage()){
     fetch(`https://fakestoreapi.com/products`)
       .then(res => res.json())
-      .then(json => {
-        for(let key in json){
-          //contentString = JSON.stringify(json);;
-          localStorage.setItem(key,JSON.stringify(json[key]));
-          //console.log("11");
+      .then(data => {
+        for(let key in data){
+          localStorage.setItem(key,JSON.stringify(data[key]));
         }
       } );
   }
-  console.log("line20");
-  console.log(localStorage.length);
+
+
+
+//  console.log(localStorage.length);
 
   var list = [];
+  var counts;
+  var product_list = document.getElementById("product_list");
+
+  for(var i = 0; i < localStorage.length; i += 1){
+    var fromJS = JSON.parse(localStorage.getItem(i));
+    var temp = document.createElement('product_item');
+    temp.id = i.toString();
+    temp.title = fromJS['title'];
+    //console.log(temp.title);
+    temp.price = fromJS['price'];
+    temp.src = fromJS['image'];
+
+    //product_list.appendChild(temp);
+
+  }
+
+  });
+
+function addToCart(){
+
+}
+
+//localStorage.clear();
+  /*  if(checkStorage()){
+    list = (localStorage.getItem('list')).split(',');
+  }*/
 
 
 
-});
+//});
