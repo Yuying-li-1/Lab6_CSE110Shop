@@ -106,18 +106,34 @@ class ProductItem extends HTMLElement {
 
       else if(name == 'add'){
         let button = shadow.querySelector('button');
+
         if(newVal == 0){
           button.textContent = "Add to Cart";
         }
         else{
           button.textContent = "Remove from Cart";
         }
+
       }
+
    }
 
 
+   get title(){
+     return this.getAttribute('title');
+   }
 
+   get price(){
+     return this.getAttribute('price');
+   }
 
+   get src(){
+     return this.getAttribute('src');
+   }
+
+   get add(){
+     return this.getAttribute('add');
+   }
 
     set title(newTitle){
       this.setAttribute('title', newTitle);
