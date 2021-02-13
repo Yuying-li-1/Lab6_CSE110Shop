@@ -149,11 +149,6 @@ class ProductItem extends HTMLElement {
     set add(newAdd){
       this.setAttribute('add', newAdd);
     }
-    /*shadow.appendChild(product);
-    product.appendChild(image);
-    product.appendChild(title);
-    product.appendChild(price);*/
-
 
 }
 
