@@ -31,6 +31,7 @@ window.addEventListener('DOMContentLoaded', () => {
     //console.log(temp.title);
     temp.price = fromJS['price'];
     temp.src = fromJS['image'];
+    console.log(temp.src);
 
     //product_list.appendChild(temp);
 
