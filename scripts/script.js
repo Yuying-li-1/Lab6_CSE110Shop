@@ -59,6 +59,17 @@ function addToCart(shad, list){
   var tempBut = shadow.querySelector('button');
   tempBut.addEventListener('click', function(){
   var counts = parseInt(document.getElementById('cart-count').textContent);
+
+  function miao(){
+    if(shad.add == 0){
+      alert("Add to cart");
+    }
+    else{
+      alert("Remove from cart");
+    }
+  }
+
+  tempBut.onclick = miao();
   if(shad.add == 0){
     shad.add = 1;
     counts += 1;
@@ -68,6 +79,7 @@ function addToCart(shad, list){
   }
 
   else if(shad.add == 1){
+
     shad.add = 0;
     counts -= 1;
     list.splice(list.indexOf(shad.id), 1);
