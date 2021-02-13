@@ -19,21 +19,18 @@ window.addEventListener('DOMContentLoaded', () => {
 
 //  console.log(localStorage.length);
 
-  var list = [];
-  var counts;
-  var product_list = document.getElementById("product_list");
+  var product_list = document.getElementById("product-list");
 
   for(var i = 0; i < localStorage.length; i += 1){
     var fromJS = JSON.parse(localStorage.getItem(i));
-    var temp = document.createElement('product_item');
+    var temp = document.createElement('product-item');
     temp.id = i.toString();
     temp.title = fromJS['title'];
     //console.log(temp.title);
     temp.price = fromJS['price'];
     temp.src = fromJS['image'];
-    console.log(temp.src);
 
-    //product_list.appendChild(temp);
+    product_list.appendChild(temp);
 
   }
 
