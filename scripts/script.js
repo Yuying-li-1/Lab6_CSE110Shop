@@ -73,7 +73,13 @@ function addToCart(shad, list){
     list.splice(list.indexOf(shad.id), 1);
     document.getElementById('cart-count').textContent = counts.toString();
   }
-
+  if(list.length > 0){
+    localStorage.setItem('list', list);
+  }
+  else{
+    localStorage.removeItem('list');
+    document.getElementById('cart-count').textContent = '0';
+  }
   });
 }
 
