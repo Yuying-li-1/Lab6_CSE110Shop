@@ -70,6 +70,8 @@ function addToCart(shad, list){
   }
 
   tempBut.onclick = miao();
+
+  
   if(shad.add == 0){
     shad.add = 1;
     counts += 1;
